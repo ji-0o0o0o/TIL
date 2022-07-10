@@ -25,3 +25,5 @@
 
 - 로컬repo : 내가쓰는거 /원격repo: 클라우드 느낌
  => 협업위해 같이씀
+
+Git 프로젝트 작업을 할 때는 pull -> 로컬 repo commit -> push  순서로 
