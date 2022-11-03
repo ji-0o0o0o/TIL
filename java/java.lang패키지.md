@@ -571,3 +571,101 @@ public class object{
 🐳 동기화→ 데이터 보호/ 멀티 쓰레드에 안전
 🐳 멀티쓰레드 : 동시에 여러작업 / 싱글쓰레드 : 한번에 1개 작업
 ```
+<br/>
+
+### Math 클래스
+
+- Math클래스의 생성자는 접근제어자가 private이기 때문에 다른 클래스에서 Math인스턴스 생성할 수 없도록 되어있다 
+→ 클래스 내에서 인스턴스 변수가 하나도 없어서 인스턴스를 생성할 필 요 없기 때문
+
+> Math 클래스
+> 
+- static double/float/int/long `abs`(double/float/int/long a)
+    - 절대값
+- static double `ceil`(double a)
+    - 올림
+- static double `floor`(double a)
+    - 버림
+- static double/float/int/long `max`(double/float/int/long a, double/float/int/long b)
+    - 두 값 비교해 큰 값
+- static double/float/int/long `min`(double/float/int/long a, double/float/int/long b)
+    - 두 값 비교해 작은 값
+- static double `random`()
+    - 난수
+- static double `rint`(double a)
+    - 두 정수의 정가운데 있는 값(0.5) 짝수 반올림
+- static long `round`(double/float a)
+    - 반올림
+    
+<br/>
+
+### 래퍼(wrapper) 클래스
+
+- 8개의 기본형 값을 감싸는 클래스
+- 8개의 기본형을 객체로 다뤄야할때 사용하는 클래스
+    - 자바에서는 기본형을 객체로 다루지 않지만 객체로 저장하거나 비교를 위해 객체로 다뤄야할때가 있다.
+- 래퍼클래스들은 MAX_VALUE,MIN_VALUE,SIZE,BYTRS,TYPE 등의 static상수를 공통적으로 가지고 있다.
+    
+    ```java
+    private final class Integer extends Number implements Comparable{
+    	...
+    	private int value;
+    	...
+    }
+    ```
+    
+    ![image](https://user-images.githubusercontent.com/102898794/199733741-fcbb740e-8ef7-4d23-b2dd-f705852324ad.png)
+    
+<br/>
+
+### Number클래스
+
+- 모든 숫자 래퍼 클래스의 조상
+
+![image](https://user-images.githubusercontent.com/102898794/199733871-645cf6d6-0b3c-490f-8624-eb9ab85aee3f.png)
+
+
+```java
+public abstract class Number implements java.io.Serializable {
+	public abstract int intValue();
+	public abstract long longValue();
+	public abstract float floatValue();
+	public abstract double doubleValue();
+	// => 래퍼 객체를 기본형으로 변경
+
+	public byte byteValue(){
+		return (byte)intValue();
+	}
+
+	public short shortValue(){
+		return (short)intValue();
+	}
+}ㅑ
+```
+<br/>
+
+### 문자열을 숫자로 변환하기
+
+- 문자열을 숫자로 변환하는 방법
+
+![image](https://user-images.githubusercontent.com/102898794/199733986-3a5983ed-d9cc-448e-b079-a3bf9b1dcba7.png)
+
+ 
+
+- n진법의 문자열을 숫자로 변환하는 방법
+    - `int i = Integer.parseInt(”100”, 변경하고자 하는 n진법)`
+        - int i = Integer.parseInt(”100”, 2)→2진법으로
+        - int i = Integer.parseInt(”100”, 8)→8진법으로
+        
+<br/>
+
+### 오토박싱 & 언박싱(jdk 1.5이후)
+
+- jdk 1.5이전에는 기본형과 참조형간의 연산이 불가능
+- jdk 1.5 이후 컴파일러가 자동으로 변경
+
+![image](https://user-images.githubusercontent.com/102898794/199734320-530e34eb-9ab8-4602-a252-61c5aba81acb.png)
+
+- `기본형 값을 객체로 자동변환하는 것을 오토박싱, 그 반대는 언박싱`
+    
+    ![image](https://user-images.githubusercontent.com/102898794/199734570-531f0b07-7255-40c8-89a4-9d6d6ab3e812.png)
