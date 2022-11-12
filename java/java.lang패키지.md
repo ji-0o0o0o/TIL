@@ -668,4 +668,4 @@ public abstract class Number implements java.io.Serializable {
 
 - `기본형 값을 객체로 자동변환하는 것을 오토박싱, 그 반대는 언박싱`
     
-    ![image](https://user-images.githubusercontent.com/102898794/199734570-531f0b07-7255-40c8-89a4-9d6d6ab3e812.png)
+    ![image](https://user-images.githubusercontent.com/102898794/199734570-531f0b07-7255-40c8-89a4-9d6d6ab3e812.png) 
