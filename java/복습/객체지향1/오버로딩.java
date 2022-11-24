@@ -37,9 +37,10 @@ class MyMath3 {
 
     int add(int[] a) {		// 배열의 모든 요소의 합을 결과로 돌려준다.
         System.out.print("int add(int[] a) - ");
-        int result = 0;
-        for(int i=0; i < a.length;i++)
+        int result = 0; //결과를 나타낼 변수 생성
+        for(int i=0; i < a.length;i++) // 하나씩 돌려가며 더해준다
             result += a[i];
+        // == for (int j : a) result += j;
 
         return result;
     }
