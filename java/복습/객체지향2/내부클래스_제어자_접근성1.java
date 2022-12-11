@@ -9,7 +9,9 @@ public class 내부클래스_제어자_접근성1 {
 
     static class StaticInner{
         int iv =200;
-        static int cv = 100;//static 클래스이므로 static멤버를 정의 가능
+        static int cv = 100;
+        //static 클래스이므로 static멤버를 정의 가능
+        //객체 생성 없이 사용가능해야하므로-> static클래스가 아니면 모순이 생기므로 static class에 써줘야한다.
     }
 
     void myMethod(){
